@@ -3,7 +3,7 @@ import "./page.css";
 import { useEffect, useState } from "react";
 function Home(props) {
   const [showHome, setShowHome] = useState(true);
-  const [email, setEmail] = useState("");
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHome(false);
@@ -12,19 +12,7 @@ function Home(props) {
       clearTimeout(timer);
     };
   }, []);
-  const handleNotifyClick = () => {
-    // Here you can send the email to your server for further processing
-    // Replace this with actual email sending logic
-    if (email) {
-      // Send the email using an API or backend service
-      sendEmail(email);
-    }
-  };
 
-  const sendEmail = (email) => {
-    // Replace this with your email sending logic
-    // You may need to make an API request to your server or use a service like Nodemailer (Node.js) for sending emails.
-  };
   const animationProps = useSpring({
     opacity: 1,
     from: { opacity: 0 },
